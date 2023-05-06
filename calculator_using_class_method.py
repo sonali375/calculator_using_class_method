@@ -1,38 +1,53 @@
-class cal():
-    
-    def __init__(self,a,b):
-        self.a = a
-        self.b = b
+class calculator():
+    """this is the class for calculator"""
+    def __init__(self,number_1,number_2):
+        self.number_1 = number_1
+        self.number_2 = number_2
     def add(self):
-        return self.a + self.b
+        """function for addition"""
+        return self.number_1 + self.number_2
     def sub(self):
-        return self.a - self.b
+        """function for subtraction"""
+        return self.number_1 - self.number_2
     def multiply(self):
-        return self.a * self.b
+        """function for multiplication"""
+        return self.number_1 * self.number_2
     def divide(self):
-        return self.a / self.b
+        """function for division"""
+        return self.number_1 / self.number_2
 
-a = int(input('Enter First number : '))
-b = int(input('Enter Second number : '))        
-obj=cal(a,b)
+number_1 = int(input('Enter First number : '))
+number_2 = int(input('Enter Second number : '))    
+
+obj=calculator(number_1,number_2)
+"""passing parameter to calculator"""
+
 while True:
     def menu():
-        x = ('1. Add \n2. Sub \n3. Multiply \n4. Divide \n5. Exit') 
-        print(x)
+        option = ('1. Add \n2. Sub \n3. Multiply \n4. Divide \n5. Exit') 
+        print(option)
+
     menu()
     choice = int(input('Please select one of the following : ')) 
+    
     if choice == 1:
+        """perform addition"""
         print("Result1: ",obj.add())
     elif choice == 2:
+        """perform subtraction"""
         print("Result2: ",obj.sub())
     elif choice == 3:
+        """perform multiplication"""
         print("Result3: ",obj.multiply())    
     elif choice == 4:
+        """perform division"""
         print("Result4: ",obj.divide())
     elif choice == 5:
+        """to exit from the options"""
         print('Thank You')
         break
     else:
+        """any other value than the options available is invalid"""
         print('Invalid option')
         break
 print()
